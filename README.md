@@ -1,51 +1,48 @@
-Password Reset Flow
-The task is to implement correct password reset flow with email verification and proper update of new password in the database for web page.
+# Password Reset Flow Project
 
-🔄 Backend Flow
-1️⃣ Registration
-Register new user. If already existing, throw error message.
+## Overview
 
-If valid, update in MongoDB database and navigate to login page.
+This project implements a complete password reset flow with email verification and secure password update for a web application.
 
-2️⃣ Login
-Authenticate existing user.
+---
 
-Throw error if:
+## Features
 
-Email is not registered
+- **Forgot Password:**  
+  Users can request a password reset link via email.  
+  The link contains a unique JWT token valid for 1 hour.
 
-Password is incorrect
+- **Reset Password:**  
+  Users enter a new password via the reset link.  
+  Token verification ensures security and expiry handling.  
+ 
+- **Security:**  
+  - Password hashing with bcryptjs  
+  - JWT tokens with 1-hour expiration  
+  - CORS restricted to frontend domains  
+  - Environment variables used for sensitive data  
 
-3️⃣ Forgot Password
-User clicks "Forgot Password" link in login page.
+---
 
-System sends email with:
+## Tech Stack
 
-Reset password link
+- **Frontend:** React + Vite + Bootstrap  
+- **Backend:** Node.js + Express  
+- **Database:** MongoDB Atlas  
+- **Email Service:** Nodemailer + Gmail SMTP  
+- **Deployment:**  
+  - Frontend: Netlify  
+  - Backend: Render  
 
-Unique JWT token (valid for 1 hour)
+---
 
-4️⃣ Reset Password
-User enters new password with token verification.
+## Demo Links
 
-If token matches:
+- **Frontend:** [https://storied-sundae-fd4ddc.netlify.app](https://storied-sundae-fd4ddc.netlify.app)  
+- **Backend:** [https://password-reset-4ul1.onrender.com](https://password-reset-4ul1.onrender.com)  
 
-Updates password in database (hashed)
+---
 
-Navigates to Login Page
+## License
 
-If token invalid/expired: Throws error
-
-🛠️ Technical Stack
-Component	Technology Used
-Frontend	React + Vite + Bootstrap
-Backend	    Node.js + Express
-Database	MongoDB Atlas
-Email	    Nodemailer + Gmail SMTP
-Deployment	Netlify (Frontend) + Render (Backend)
-
-Security Features
-Password hashing with bcryptjs
-JWT token expiration (1 hour)
-CORS restricted to frontend domains
-Environment variables for sensitive data
+This project is open source and free to use.
