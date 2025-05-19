@@ -13,7 +13,7 @@ exports.forgotPassword = async (req, res) => {
   user.resetTokenExpiry = Date.now() + 3600000; // 1 hour
   await user.save();
 
-  const resetLink = `http://localhost:5173/reset-password/${token}`;
+  const resetLink = `https://storied-sundae-fd4ddc.netlify.app/reset-password/${token}`;
   await sendEmail(email, "Password Reset", `<a href="${resetLink}">Reset Password</a>`);
   res.json({ message: "Email sent" });
 };
