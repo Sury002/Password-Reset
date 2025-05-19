@@ -13,7 +13,7 @@ function ForgotPassword() {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/forgot-password",
+        "https://password-reset-4ul1.onrender.com/api/auth/forgot-password",
         { email }
       );
       setMessage(res.data.message);
