@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Form, Button, Alert, Card } from 'react-bootstrap';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';  
 
 function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,6 +19,9 @@ function Register() {
       });
       setMessage(res.data.message);
       setError('');
+      setTimeout(() => {
+        navigate('/login');   
+      }, 2000);
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed');
       setMessage('');

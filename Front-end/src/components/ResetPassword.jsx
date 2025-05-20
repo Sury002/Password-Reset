@@ -20,7 +20,9 @@ function ResetPassword() {
         { password }
       );
       setMessage(res.data.message);
-      setTimeout(() => navigate("/"), 2000);
+      setTimeout(() => {
+        navigate("/login");  
+      }, 2000);
     } catch (err) {
       setError(err.response?.data?.message || "Error resetting password");
     } finally {
