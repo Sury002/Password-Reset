@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 import { Button, Card, Container } from 'react-bootstrap';
 
 function Home() {
-  // Check auth status (replace with your actual auth logic)
-  const isAuthenticated = localStorage.getItem('isAuthenticated');
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
 
   return (
     <Container className="mt-5">
@@ -37,8 +36,7 @@ function Home() {
           </>
         )}
 
-        {/* Demo link for password reset */}
-        <div className="mt-4">
+                <div className="mt-4">
           <Link to="/forgot-password">Try password reset flow →</Link>
         </div>
       </Card>
