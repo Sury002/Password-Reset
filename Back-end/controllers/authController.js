@@ -2,8 +2,6 @@ const User = require("../models/User");
 const crypto = require("crypto");
 const bcrypt = require("bcryptjs");
 const sendEmail = require("../utils/sendEmail");
-const bcrypt = require('bcryptjs');
-const User = require('../models/User');
 
 exports.register = async (req, res) => {
   try {
