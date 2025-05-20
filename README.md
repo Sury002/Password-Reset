@@ -1,48 +1,55 @@
-# Password Reset Flow Project
+# 🔐 Password Reset Flow Project
 
-## Overview
-
-This project implements a complete password reset flow with email verification and secure password update for a web application.
+A full-stack application implementing a secure password reset flow with email verification, user registration, and login functionality.
 
 ---
 
-## Features
+## 🚀 Features
 
-- **Forgot Password:**  
-  Users can request a password reset link via email.  
-  The link contains a unique JWT token valid for 1 hour.
+### ✅ Register
+- Users can create a new account using their email and password.
+- Passwords are securely hashed using **bcryptjs** before being stored in the database.
 
-- **Reset Password:**  
-  Users enter a new password via the reset link.  
-  Token verification ensures security and expiry handling.  
- 
-- **Security:**  
-  - Password hashing with bcryptjs  
-  - JWT tokens with 1-hour expiration  
-  - CORS restricted to frontend domains  
-  - Environment variables used for sensitive data  
+### 🔓 Login
+- Registered users can log in with their credentials.
+- Upon successful login, the backend returns a token for session management (can be extended).
+- Invalid credentials return appropriate error messages.
+
+### 📧 Forgot Password
+- Users can request a password reset link via email.
+- The email contains a unique **JWT token** valid for **1 hour**.
+
+### 🔁 Reset Password
+- Users can securely reset their password using the link from the email.
+- Token verification ensures security and expiration handling.
+
+### 🔒 Security
+- Password hashing using **bcryptjs**
+- Secure JWT tokens with **1-hour expiration**
+- **CORS** is restricted to trusted frontend domains
+- Environment variables handle all sensitive configuration
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 - **Frontend:** React + Vite + Bootstrap  
 - **Backend:** Node.js + Express  
 - **Database:** MongoDB Atlas  
 - **Email Service:** Nodemailer + Gmail SMTP  
 - **Deployment:**  
-  - Frontend: Netlify  
-  - Backend: Render  
+  - Frontend: **Netlify**  
+  - Backend: **Render**
 
 ---
 
-## Demo Links
+## 🌐 Live Demo
 
-- **Frontend:** [https://storied-sundae-fd4ddc.netlify.app](https://storied-sundae-fd4ddc.netlify.app)  
-- **Backend:** [https://password-reset-4ul1.onrender.com](https://password-reset-4ul1.onrender.com)  
+- 🔗 Frontend: [https://storied-sundae-fd4ddc.netlify.app](https://storied-sundae-fd4ddc.netlify.app)  
+- 🔗 Backend: [https://password-reset-4ul1.onrender.com](https://password-reset-4ul1.onrender.com)
 
 ---
 
-## License
+## 📄 License
 
-This project is open source and free to use.
+This project is **open source** and free to use.
