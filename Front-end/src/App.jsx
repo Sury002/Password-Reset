@@ -1,19 +1,21 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Container } from 'react-bootstrap'
-import ForgotPassword from './components/ForgotPassword'
-import ResetPassword from './components/ResetPassword'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Login from './components/Login';
+import Register from './components/Register';
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
 
-function App() {
+
+export default function App() {
   return (
     <BrowserRouter>
-      <Container className="mt-5">
-        <Routes>
-          <Route path="/" element={<ForgotPassword />} />
-          <Route path="/reset-password/:token" element={<ResetPassword />} />
-        </Routes>
-      </Container>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
+      </Routes>
     </BrowserRouter>
-  )
+  );
 }
-
-export default App
